@@ -23,6 +23,11 @@ LOCAL_CFLAGS += -m64
 LOCAL_LDFLAGS += -m64
 endif
 
+# We use the host compilers because the Linux SDK build
+# uses a 32-bit toolchain that can't handle -m64
+LOCAL_CC := $(CC)
+LOCAL_CXX := $(CXX)
+
 LOCAL_NO_DEFAULT_COMPILER_FLAGS := true
 
 LOCAL_MODULE:= libneo_util
