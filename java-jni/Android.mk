@@ -1,3 +1,5 @@
+ifeq ($(BUILD_CLEARSILVER),true)
+
 LOCAL_PATH:= $(call my-dir)
 
 
@@ -78,3 +80,5 @@ $(GEN): PRIVATE_MODULE := $(LOCAL_MODULE)
 $(GEN): $(our_java_lib)
 	$(transform-generated-source)
 $(intermediates)/j_neo_cs.o : $(GEN)
+
+endif
